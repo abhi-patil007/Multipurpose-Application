@@ -169,6 +169,7 @@ public DietPlan() {
 
         check.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         check.setText("Check Diet Plan");
+        check.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkActionPerformed(evt);
@@ -177,6 +178,7 @@ public DietPlan() {
 
         back.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         back.setText("Back");
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -220,6 +222,7 @@ public DietPlan() {
 
         exit.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         exit.setText("Exit");
+        exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
@@ -338,7 +341,7 @@ public DietPlan() {
 //    BACK BUTTON
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        Login Back = new Login();
+        Dashboard Back = new Dashboard();
         Back.setVisible(true);
         this.dispose();
 
@@ -351,6 +354,8 @@ public DietPlan() {
         /**
          * *********THIS IS THE DIET MANAGEMENT CODE***************
          */
+        
+       
         String activity = choice.getText();
         int Activity = Integer.parseInt(activity);
 
@@ -363,6 +368,12 @@ public DietPlan() {
         String Gender = gender.getText();
 
         String Weight = weight.getText();
+//         if((Name && year && Gender && ht  && wt  &&  Activity)){
+//            
+//        }
+//        else{
+//            
+//        }
         double wt = Double.parseDouble(Weight);
 
         String Height = height.getText();
