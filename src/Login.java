@@ -232,6 +232,7 @@ public static String passwordHash(String password) {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Login Key");
 
+        btn_login.setBackground(new java.awt.Color(255, 51, 51));
         btn_login.setText("LOGIN");
         btn_login.setFont(new java.awt.Font("Roboto Medium", 1, 15)); // NOI18N
         btn_login.addActionListener(new java.awt.event.ActionListener() {
@@ -293,7 +294,6 @@ public static String passwordHash(String password) {
 
         lbl_close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/close_log.png"))); // NOI18N
         lbl_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbl_close.setPreferredSize(new java.awt.Dimension(90, 90));
         lbl_close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_closeMouseClicked(evt);
@@ -447,12 +447,14 @@ public static String passwordHash(String password) {
         }
     }//GEN-LAST:event_checkbox_confpwdActionPerformed
 
+
     private void btn_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signupActionPerformed
         // TODO add your handling code here:
         SignUp signup = new SignUp();
         signup.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_signupActionPerformed
+
 
     private void lbl_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_closeMouseClicked
         // TODO add your handling code here:

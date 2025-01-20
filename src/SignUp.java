@@ -308,6 +308,7 @@ public boolean duplicateContact() {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Confirm Password");
 
+        btn_signup.setBackground(new java.awt.Color(255, 51, 51));
         btn_signup.setText("SIGNUP");
         btn_signup.setFont(new java.awt.Font("Roboto Medium", 1, 15)); // NOI18N
         btn_signup.addActionListener(new java.awt.event.ActionListener() {
