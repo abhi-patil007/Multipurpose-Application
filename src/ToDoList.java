@@ -18,8 +18,17 @@ import javax.swing.table.DefaultTableModel;
 public class ToDoList extends javax.swing.JFrame {
 
 //GLOBAL VARIABLE FOR "counting clicks" & TO CAPTURE "sr_no" OF A NOTE WHICH THE USER CLICKS
+private static String title;
 int clickcount = 0;
 int sr_no;
+
+public static void settitle(String Title) {
+    title = Title;
+}
+
+public static String gettitle() {
+    return title;
+}
 
 /**
  * Creates new form Calculator
@@ -40,10 +49,11 @@ public void setNotesDetails() {
         while (rs.next()) {
             sr_no = rs.getInt("srno");
             Timestamp dateTime = rs.getTimestamp("datetime");
-            String Title = rs.getString("title");
+             title = rs.getString("title");
             String Description = rs.getString("description");
 
-            Object[] obj = {sr_no, dateTime, Title, Description};
+//            ToDoList.settitle(tit);
+            Object[] obj = {sr_no, dateTime, title, Description};
             DefaultTableModel model = (DefaultTableModel) table_note.getModel();
             model.addRow(obj);
         }
@@ -142,7 +152,7 @@ public void clearTable() {
 //TO CHECK IF FIELDS ARE EMPTY ARE NOT
 public boolean emptyField() {
     boolean isEmpty = false;
-    String title = txt_note_title.getText();
+   String title = txt_note_title.getText();
     String desc = txtarea_note_desc.getText();
     if (title.isEmpty() || desc.isEmpty()) {
         isEmpty = true;
@@ -203,6 +213,11 @@ public boolean emptyField() {
         txt_note_title.setForeground(new java.awt.Color(255, 255, 255));
         txt_note_title.setPhColor(new java.awt.Color(255, 255, 255));
         txt_note_title.setPlaceholder("Enter Your Note Title");
+        txt_note_title.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_note_titleActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -602,12 +617,18 @@ public boolean emptyField() {
 //RADIO BUTTON ACTION   
     private void radio_addremindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_addremindActionPerformed
         // TODO add your handling code here:
-        if(radio_addremind.isSelected()){
-           date_time_reminder remind=new date_time_reminder();
-           remind.setVisible(true);
+        if (radio_addremind.isSelected()) {
+            
+            date_time_reminder remind = new date_time_reminder(title);
+            
+            remind.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_radio_addremindActionPerformed
+
+    private void txt_note_titleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_note_titleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_note_titleActionPerformed
 
 /**
  * @param args the command line arguments
@@ -663,7 +684,7 @@ public static void main(String args[]) {
     private javax.swing.JRadioButton radio_addremind;
     private ScrollPaneWin11 scrollPaneWin111;
     private javax.swing.JTable table_note;
-    private app.bolivia.swing.JCTextField txt_note_title;
+    public app.bolivia.swing.JCTextField txt_note_title;
     private javax.swing.JTextArea txtarea_note_desc;
     // End of variables declaration//GEN-END:variables
 

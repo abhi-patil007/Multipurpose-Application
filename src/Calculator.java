@@ -20,7 +20,7 @@ String operator = null;
  */
 public Calculator() {
     initComponents();
-    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/multi_app_icon.jpg"))); //FOR ICON 
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
 }
 
 /**

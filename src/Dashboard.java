@@ -14,22 +14,23 @@ public Dashboard() {
     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
 }
 
-public void getDetails(int userid){
-    Login log=new Login();
-    try{
-        Connection con=DbConn.getConnection();
-        PreparedStatement pst=con.prepareStatement("select * from mpa.users where id=?");
+public void getDetails(int userid) {
+    Login log = new Login();
+    try {
+        Connection con = DbConn.getConnection();
+        PreparedStatement pst = con.prepareStatement("select * from mpa.users where id=?");
         pst.setInt(1, userid);
-        ResultSet rs=pst.executeQuery();
-        if(rs.next()){
-            int id=rs.getInt("id");
-            
-            lbl_username.setText("Welcome  "+rs.getString("name"));
+        ResultSet rs = pst.executeQuery();
+        if (rs.next()) {
+            int id = rs.getInt("id");
+
+            lbl_username.setText("Welcome  " + rs.getString("name"));
         }
-    }catch(Exception e){
+    } catch (Exception e) {
         e.printStackTrace();
     }
 }
+
 /**
  * This method is called from within the constructor to initialize the form.
  * WARNING: Do NOT modify this code. The content of this method is always
@@ -196,7 +197,7 @@ public void getDetails(int userid){
         lbl_aud_player.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_aud_player.setForeground(new java.awt.Color(255, 255, 255));
         lbl_aud_player.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_aud_player.setText("AUDIO  PLAYER");
+        lbl_aud_player.setText("MUSIC  PLAYER");
         lbl_aud_player.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbl_aud_player.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -213,7 +214,7 @@ public void getDetails(int userid){
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_aud_player)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,7 +414,7 @@ public void getDetails(int userid){
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(140, 140, 140)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(207, 207, 207))
@@ -441,43 +442,43 @@ public void getDetails(int userid){
 
     private void lbl_calciMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_calciMouseClicked
         // TODO add your handling code here:
-        Calculator calci=new Calculator();
+        Calculator calci = new Calculator();
         calci.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_calciMouseClicked
 
     private void lbl_todolistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_todolistMouseClicked
         // TODO add your handling code here:
-        ToDoList todolist=new ToDoList();
+        ToDoList todolist = new ToDoList();
         todolist.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_todolistMouseClicked
 
     private void lbl_expense_manageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_expense_manageMouseClicked
         // TODO add your handling code here:
-        Expense_Manage exp_man=new Expense_Manage();
+        Expense_Manage exp_man = new Expense_Manage();
         exp_man.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_lbl_expense_manageMouseClicked
 
     private void lbl_aud_playerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_aud_playerMouseClicked
         // TODO add your handling code here:
-        AudioPlayer aud=new AudioPlayer();
+        AudioPlayer aud = new AudioPlayer();
         aud.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_aud_playerMouseClicked
 
     private void lbl_video_playerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_video_playerMouseClicked
         // TODO add your handling code here:
-        VideoPlayer video=new VideoPlayer();
+        VideoPlayer video = new VideoPlayer();
         video.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_video_playerMouseClicked
 
     private void lbl_diet_planMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_diet_planMouseClicked
         // TODO add your handling code here:
-        DietPlan diet=new DietPlan();
+        DietPlan diet = new DietPlan();
         diet.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_diet_planMouseClicked
