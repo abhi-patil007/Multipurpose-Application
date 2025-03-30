@@ -20,7 +20,7 @@ String operator = null;
  */
 public Calculator() {
     initComponents();
-     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
 }
 
 /**
@@ -352,12 +352,12 @@ public Calculator() {
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         // TODO add your handling code here:
-        txt_field.setText(txt_field.getText() + "5");    
+        txt_field.setText(txt_field.getText() + "5");
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
         // TODO add your handling code here:
-        txt_field.setText(txt_field.getText() + "6");    
+        txt_field.setText(txt_field.getText() + "6");
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
@@ -387,59 +387,58 @@ public Calculator() {
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
-         num1=Double.parseDouble(txt_field.getText());
+        num1 = Double.parseDouble(txt_field.getText());
         txt_field.setText("");
-        operator="+";
+        operator = "+";
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_subtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_subtActionPerformed
         // TODO add your handling code here:
-        
-        num1=Double.parseDouble(txt_field.getText());
-          txt_field.setText("");
-        operator="-";
+
+        num1 = Double.parseDouble(txt_field.getText());
+        txt_field.setText("");
+        operator = "-";
 //         txt_field.setText("-");
-        
+
     }//GEN-LAST:event_btn_subtActionPerformed
 
     private void btn_equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_equalActionPerformed
         // TODO add your handling code here:
-        
-        num2=Double.parseDouble(txt_field.getText());
-        
-       
-       double ans=0;
-       if(operator=="+"){
-           ans=num1+num2;
-           txt_field.setText(String.format("%.2f", ans));
-       }
-       if(operator=="-"){
-           ans=num1-num2;
-          txt_field.setText(String.format("%.2f", ans));
-       }
-       if(operator=="*"){
-           ans=num1*num2;
-           txt_field.setText(String.format("%.2f", ans));
-       }
-       if(operator=="/"){
-           ans=num1/num2;
-           txt_field.setText(String.format("%.2f", ans));
-       }
-       operator=null;
+
+        num2 = Double.parseDouble(txt_field.getText());
+
+        double ans = 0;
+        if (operator == "+") {
+            ans = num1 + num2;
+            txt_field.setText(String.format("%.2f", ans));
+        }
+        if (operator == "-") {
+            ans = num1 - num2;
+            txt_field.setText(String.format("%.2f", ans));
+        }
+        if (operator == "*") {
+            ans = num1 * num2;
+            txt_field.setText(String.format("%.2f", ans));
+        }
+        if (operator == "/") {
+            ans = num1 / num2;
+            txt_field.setText(String.format("%.2f", ans));
+        }
+        operator = null;
     }//GEN-LAST:event_btn_equalActionPerformed
 
     private void btn_multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_multActionPerformed
         // TODO add your handling code here:
-        num1=Double.parseDouble(txt_field.getText());
+        num1 = Double.parseDouble(txt_field.getText());
         txt_field.setText("");
-        operator="*";
+        operator = "*";
     }//GEN-LAST:event_btn_multActionPerformed
 
     private void btn_divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_divActionPerformed
         // TODO add your handling code here:
-        num1=Double.parseDouble(txt_field.getText());
+        num1 = Double.parseDouble(txt_field.getText());
         txt_field.setText("");
-        operator="/";
+        operator = "/";
     }//GEN-LAST:event_btn_divActionPerformed
 
     private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
@@ -449,13 +448,15 @@ public Calculator() {
 
     private void btn_eraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eraseActionPerformed
         // TODO add your handling code here:
-        String str=txt_field.getText();
-        txt_field.setText(str.substring(0,str.length()-1));
+        String str = txt_field.getText();
+        txt_field.setText(str.substring(0, str.length() - 1));
     }//GEN-LAST:event_btn_eraseActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         // TODO add your handling code here:
-        Dashboard dash=new Dashboard();
+        int id = Login.getUser_id();
+        Dashboard dash = new Dashboard();
+        dash.getDetails(id);
         dash.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_backActionPerformed

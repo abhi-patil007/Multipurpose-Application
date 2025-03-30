@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
 import java.awt.Toolkit;
 import java.security.MessageDigest;
@@ -11,10 +7,6 @@ import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 
-/**
- *
- * @author TEST
- */
 public class Login extends javax.swing.JFrame {
 
 private void clearField() {

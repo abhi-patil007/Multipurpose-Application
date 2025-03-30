@@ -30,7 +30,7 @@ private void clearField() {
  */
 public SignUp() {
     initComponents();
-    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/multi_app_icon.jpg"))); //FOR ICON 
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
 }
 
 //GLOBAL VARIABLE TO SET THE SUCCESSFUL TICK ICON ON JOPTIONPANE MESSAGE
@@ -68,7 +68,6 @@ public void SignUp(String username, String pwd, String logkey) {
         key.append(digit);
     }
     String contact = txt_contact_no.getText();
-
     String conf_pwd = txt_conf_password.getText();
     String passwd = txt_password.getText();
     String passkey = keyHash(key.toString());
@@ -84,7 +83,7 @@ public void SignUp(String username, String pwd, String logkey) {
         int rowcount = pst.executeUpdate();
         if (rowcount > 0) {
             if (conf_pwd.equals(passwd)) {
-                JOptionPane.showMessageDialog(this, "SignUp successful..." + username + "\nYour login key is:-  " + key, "SUCCESS", JOptionPane.INFORMATION_MESSAGE, icon);
+                JOptionPane.showMessageDialog(this, "SignUp Successful..." + username + "\nYour login key is:-  " + key, "SUCCESS", JOptionPane.INFORMATION_MESSAGE, icon);
                 Login login = new Login();
                 login.setVisible(true);
                 this.dispose();
@@ -276,7 +275,7 @@ public boolean duplicateContact() {
         txt_username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
         txt_username.setForeground(new java.awt.Color(255, 255, 255));
         txt_username.setPhColor(new java.awt.Color(255, 255, 255));
-        txt_username.setPlaceholder("Enter a Unique Username");
+        txt_username.setPlaceholder("Enter a Unique Username (Example: xyz@123)");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Account_50px.png"))); // NOI18N
@@ -495,7 +494,6 @@ public boolean duplicateContact() {
     private void btn_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signupActionPerformed
         String name = txt_username.getText();
         String password = passwordHash(txt_password.getText());
-
         String passkey = keyHash(key.toString());
 
 // TODO add your handling code here:

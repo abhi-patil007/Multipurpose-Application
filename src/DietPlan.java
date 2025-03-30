@@ -1,4 +1,5 @@
 
+import java.awt.Toolkit;
 import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 
@@ -84,6 +85,7 @@ static int Calories(String Gender, int Age, double Height, double Weight, double
  */
 public DietPlan() {
     initComponents();
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icons/icon_256x256.jpg"))); //FOR ICON 
 }
 
 /**
@@ -124,7 +126,7 @@ public DietPlan() {
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Diet Plan Management System");
+        setTitle("Diet Plan Management ");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -341,8 +343,10 @@ public DietPlan() {
 //    BACK BUTTON
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        Dashboard Back = new Dashboard();
-        Back.setVisible(true);
+        int id=Login.getUser_id();
+        Dashboard dash = new Dashboard();
+        dash.getDetails(id);
+        dash.setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_backActionPerformed

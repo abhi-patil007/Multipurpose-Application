@@ -23,7 +23,6 @@ public void getDetails(int userid) {
         ResultSet rs = pst.executeQuery();
         if (rs.next()) {
             int id = rs.getInt("id");
-
             lbl_username.setText("Welcome  " + rs.getString("name"));
         }
     } catch (Exception e) {
@@ -67,6 +66,7 @@ public void getDetails(int userid) {
         jPanel9 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         lbl_diet_plan = new javax.swing.JLabel();
+        btn_log = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -383,6 +383,14 @@ public void getDetails(int userid) {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btn_log.setBackground(new java.awt.Color(255, 51, 51));
+        btn_log.setText("logout");
+        btn_log.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -402,12 +410,16 @@ public void getDetails(int userid) {
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(137, 137, 137))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_log, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(590, 590, 590))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,7 +429,9 @@ public void getDetails(int userid) {
                     .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(207, 207, 207))
+                .addGap(55, 55, 55)
+                .addComponent(btn_log, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -473,7 +487,9 @@ public void getDetails(int userid) {
         // TODO add your handling code here:
         VideoPlayer video = new VideoPlayer();
         video.setVisible(true);
+        // Close the current Swing window
         this.dispose();
+
     }//GEN-LAST:event_lbl_video_playerMouseClicked
 
     private void lbl_diet_planMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_diet_planMouseClicked
@@ -482,6 +498,13 @@ public void getDetails(int userid) {
         diet.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_diet_planMouseClicked
+
+    private void btn_logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logActionPerformed
+        // TODO add your handling code here:
+        Login log=new Login();
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_logActionPerformed
 
 /**
  * @param args the command line arguments
@@ -519,6 +542,7 @@ public static void main(String args[]) {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSMaterialButtonCircle btn_log;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
