@@ -25,7 +25,7 @@ public VideoPlayer() {
     GridBagConstraints gbc = new GridBagConstraints();
     gbc.insets = new Insets(10, 10, 10, 10); // Add spacing
 
-    selectFileButton = new JButton("Select MP4 File");
+    selectFileButton = new JButton("Select Video File");
     selectFileButton.setPreferredSize(new Dimension(200, 40));
     selectFileButton.addActionListener(e -> chooseVideoFile());
 
